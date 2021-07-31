@@ -7,7 +7,6 @@ const blog = require("./routes/blog")
 const comment = require("./routes/comment")
 
 
-
 dotenv.config({ path: './config/config.env'});
 
 connectDB();
@@ -22,11 +21,11 @@ if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
-app.use('/', (req, res) => {
-    res.send('API is running')
-})
 app.use('/api/blog', blog);
 app.use('/api/comment', comment);
+app.use('/', (req, res) => {
+    res.send('API is running')
+});
 
 const PORT = process.env.PORT || 3000
 

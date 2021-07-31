@@ -4,6 +4,7 @@ const { postComment, getComment, getAllComment, updateOneComment, deleteComment}
 
 router
     .route('/')
+    .get('/')
     .post(postComment);
 
 router
